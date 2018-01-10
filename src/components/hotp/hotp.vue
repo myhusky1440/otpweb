@@ -53,7 +53,7 @@
             });
 
             this.$http.get(fdb_url+'/hotp/sendKey',{
-              params:this.temp
+              params:{key:this.temp}
             }).then(function (res) {
               //关闭loading
               setTimeout(this.msg, 0);
