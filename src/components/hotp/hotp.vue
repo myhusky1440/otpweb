@@ -58,10 +58,12 @@
               //关闭loading
               setTimeout(this.msg, 0);
 
-              if(res.status==200){
-                this.$Message.success('服务发布成功');
+              if(res.status==200 && res.body){
+                that.min = res.body;
+                that.max = res.body+50;
+                this.$Message.success('验证成功');
               }else{
-                this.$Message.error('服务发布失败');
+                this.$Message.error('验证失败');
               }
 
             })
